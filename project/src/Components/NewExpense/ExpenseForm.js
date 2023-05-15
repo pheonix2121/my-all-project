@@ -4,9 +4,13 @@ const ExpenseForm = () => {
   const [title, setTitle] = useState('');
   const [amount, setAmount] = useState('');
   const [date, setDate] = useState('');
+  const [enteredTitle, setEnteredTitle] = useState('');
+  const [enteredAmount, setEnteredAmount] = useState('');
+  const [enteredDate, setEnteredDate] = useState('');
 
   const submitHandler = (event) => {
     event.preventDefault();
+
 
     console.log(title, amount, date);
 
@@ -15,19 +19,21 @@ const ExpenseForm = () => {
     setAmount('');
     setDate('');
   };
-
   const titleChangeHandler = (event) => {
     setTitle(event.target.value);
+    setEnteredTitle(event.target.value);
     console.log('Title changed:', event.target.value);
   };
 
   const amountChangeHandler = (event) => {
     setAmount(event.target.value);
+    setEnteredAmount(event.target.value);
     console.log('Amount changed:', event.target.value);
   };
 
   const dateChangeHandler = (event) => {
     setDate(event.target.value);
+    setEnteredDate(event.target.value);
     console.log('Date changed:', event.target.value);
   };
 
@@ -61,11 +67,23 @@ const ExpenseForm = () => {
         />
       </div>
       <button type="submit">Add Expense</button>
+
+      <div>
+        <p>Entered Title: {enteredTitle}</p>
+        <p>Entered Amount: {enteredAmount}</p>
+        <p>Entered Date: {enteredDate}</p>
+      </div>
     </form>
   );
 };
 
 export default ExpenseForm;
+
+
+
+
+
+
 
 
 
