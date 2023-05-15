@@ -11,34 +11,37 @@ const ExpenseForm = () => {
   const submitHandler = (event) => {
     event.preventDefault();
 
+    const expenseData = {
+      title: enteredTitle,
+      amount: enteredAmount,
+      date: enteredDate
+    };
 
-    console.log(title, amount, date);
+    console.log(expenseData);
 
-   
-    setTitle('');
-    setAmount('');
-    setDate('');
+
   };
   const titleChangeHandler = (event) => {
     setTitle(event.target.value);
     setEnteredTitle(event.target.value);
-    console.log('Title changed:', event.target.value);
+    //console.log('Title changed:', event.target.value);
   };
 
   const amountChangeHandler = (event) => {
     setAmount(event.target.value);
     setEnteredAmount(event.target.value);
-    console.log('Amount changed:', event.target.value);
+    //console.log('Amount changed:', event.target.value);
   };
 
   const dateChangeHandler = (event) => {
     setDate(event.target.value);
     setEnteredDate(event.target.value);
-    console.log('Date changed:', event.target.value);
+    //console.log('Date changed:', event.target.value);
   };
 
   return (
     <form onSubmit={submitHandler}>
+      
       <div>
         <label htmlFor="title">Title:</label>
         <input
