@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 const ExpenseForm = (props) => {
   const [title, setTitle] = useState('');
-  const [amount, setAmount] = useState('');
+ const [amount, setAmount] = useState('');
   const [date, setDate] = useState('');
   const [enteredTitle, setEnteredTitle] = useState('');
   const [enteredAmount, setEnteredAmount] = useState('');
