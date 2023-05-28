@@ -3,12 +3,10 @@ import React, { useState } from 'react';
 import ExpenseDate from './ExpenseDate';
 import Card from '../UI/Card';
 import './ExpenseItem.css';
-
 const ExpenseItem = (props) => {
   const [title, setTitle]= useState(props.title)
 
   const clickHandler= ()=>{
-    console.log("clicked!!")
     setTitle('Updated');
     console.log(title);
   }
@@ -24,11 +22,10 @@ const ExpenseItem = (props) => {
     props.onDelete(props.id);
   }
   return (
+    <ul>
     <Card className='expense-item'>
       <ExpenseDate date={props.date} />
       <div className='expense-item__description'>
-        <h2>{props.title}</h2>
-        <div className='expense-item__price'>${props.amount}</div>
         <h2>{title}</h2>
         <div className='expense-item__price'>${amount}</div>
       </div>
@@ -36,7 +33,8 @@ const ExpenseItem = (props) => {
       <button onClick= {delHandler}>Del Expense</button>
       <button onClick= {clickHandler2}>Change Amount</button>
     </Card>
+    </ul>
   );
-};
+}
 
 export default ExpenseItem;
